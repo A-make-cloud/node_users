@@ -1,0 +1,24 @@
+.listUser {
+  background-color: lightgray;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.list-errors {
+  background-color: lightgray;
+  padding: 1rem;
+}
+
+.preview {
+  width: 5rem;
+  height: 5rem;
+  background-color: lightgrey;
+}
+#dropArea {
+  width: 10rem;
+  height: 3rem;
+  background-color: aquamarine;
+  border: 5px dashed black;
+}
+#dropArea.dragenter{
+    background-color: blue;
+}

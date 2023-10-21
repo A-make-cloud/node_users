@@ -1,0 +1,25 @@
+<h1>Liste des utilisateurs</h1>
+{{debug list}}
+{{>message}}
+<ul>
+  {{#list}}
+    <li class="listUser">
+      <hr />
+      <img src="/static/{{#if avatar}}avatars/{{avatar}}{{else}}default.jpg{{/if}}" width="20" height="20">
+      Nom :
+      {{nom}}
+      - Prénom :
+      {{prenom}}
+      - Email :
+      {{email}}
+    </li>
+    <a href="/app/edit/{{id}}" type="button">Edit</a>
+    <a href="/app/delete?id={{id}}">Supprimer</a>
+
+
+  {{else}}
+    <p>No content</p>
+
+  {{/list}}
+
+</ul>

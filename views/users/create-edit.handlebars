@@ -1,0 +1,29 @@
+
+{{>errors}}
+<form method="post" action={{#if id}}"/app/edit/{{id}}?_method=PATCH"
+                              {{else}}"/app/create"{{/if}} enctype="multipart/form-data">
+  <div>
+    <label>nom :</label>
+    <input type="text" name="nom" value="{{#if nom}}{{nom}}{{/if}}"/>
+  </div>
+  <div>
+    <label>prénom :</label>
+    <input type="text" name="prenom" value="{{#if prenom}}{{prenom}}{{/if}}"/>
+  </div>
+  <div>
+    <label>email :</label>
+    <input type="text" name="email" value="{{#if email}}{{email}}{{/if}}"/>
+  </div>
+  <div>
+    <input id="avatar" type="file" name="avatar" onchange="avatarChange(event)"/>
+    <div id="dropArea" ondrop="dropImage(event)"></div>
+    <div class="preview">
+       {{#if avatar}} Avatar actuel :{{/if}}
+        <img src="/static/{{#if avatar}}avatars/{{avatar}}{{else}}default.jpg{{/if}}" width="80" height="80">
+    </div>
+
+  </div></div>
+  <input type="submit" value="{{#if id}}modifier{{else}}enregistrer{{/if}}" />
+</form>
+
+<script src="/static/lib.js"></script>
